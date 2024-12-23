@@ -5,14 +5,11 @@ return {
 	version = 'v0.*',
 
 	opts = {
-		keymap = { preset = 'default' },
-
-		appearance = {
-			use_nvim_cmp_as_default = true,
-			nerd_font_variant = 'mono'
+		completion = {
+			documentation = { auto_show = true, auto_show_delay_ms = 100 },
 		},
-
-		-- experimental signature help support
-		signature = { enabled = true }
+		sources = {
+			cmdline = {}
+		},
 	},
 }
