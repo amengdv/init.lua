@@ -31,13 +31,15 @@ require("lazy").setup({
 	spec = {
 		{
 			{
+				"neanias/everforest-nvim",
+			},
+			{
 				"folke/tokyonight.nvim",
 			},
 			{ "rose-pine/neovim", name = "rose-pine" },
 			{
 				"rebelot/kanagawa.nvim",
 				opts = {
-					transparent = true,
 					colors = {
 						theme = {
 							all = {

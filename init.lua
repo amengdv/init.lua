@@ -35,8 +35,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- CTRL-W d is mapped to show diagnostic under cursor
 
 function ColorMyPencils(color, transparent)
-	color = color or 'vim'
+	color = color or 'rose-pine'
 	vim.cmd.colorscheme(color)
+
+	if transparent == nil then
+		transparent = true
+	else
+		transparent = transparent
+	end
 
 	if transparent then
 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -46,9 +52,8 @@ function ColorMyPencils(color, transparent)
 		vim.api.nvim_set_hl(0, "LineNr", {
 			bg = "none",
 			fg = curr_line_nr_hl.fg
-
 		})
 	end
 end
 
-ColorMyPencils('kanagawa')
+ColorMyPencils('everforest')
