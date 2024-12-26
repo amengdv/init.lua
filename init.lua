@@ -56,4 +56,4 @@ function ColorMyPencils(color, transparent)
 	end
 end
 
-ColorMyPencils('everforest')
+ColorMyPencils('tokyonight-storm')
