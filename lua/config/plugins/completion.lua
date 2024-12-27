@@ -11,5 +11,6 @@ return {
 		sources = {
 			cmdline = {}
 		},
+		signature = { enabled = true }
 	},
 }

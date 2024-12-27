@@ -29,6 +29,11 @@ return {
 				cwd = vim.fn.stdpath("config")
 			}
 		end)
+		vim.keymap.set('n', '<leader>sc', function()
+			require('telescope.builtin').git_files {
+				cwd = "~/.dotfiles"
+			}
+		end)
 		vim.keymap.set('n', '<leader>sp', function()
 			require('telescope.builtin').find_files {
 				---@diagnostic disable-next-line: param-type-mismatch
