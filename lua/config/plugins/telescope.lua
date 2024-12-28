@@ -24,14 +24,10 @@ return {
 		end)
 		vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags)
 		vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files)
+		vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics)
 		vim.keymap.set('n', '<leader>sn', function()
 			require('telescope.builtin').find_files {
 				cwd = vim.fn.stdpath("config")
-			}
-		end)
-		vim.keymap.set('n', '<leader>sc', function()
-			require('telescope.builtin').git_files {
-				cwd = "~/.dotfiles"
 			}
 		end)
 		vim.keymap.set('n', '<leader>sp', function()
