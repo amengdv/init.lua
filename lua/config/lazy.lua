@@ -30,27 +30,7 @@ require "config.remap"
 require("lazy").setup({
 	spec = {
 		{
-			{
-				"neanias/everforest-nvim",
-			},
-			{
-				"folke/tokyonight.nvim",
-			},
 			{ "rose-pine/neovim", name = "rose-pine" },
-			{
-				"rebelot/kanagawa.nvim",
-				opts = {
-					colors = {
-						theme = {
-							all = {
-								ui = {
-									bg_gutter = "none"
-								}
-							}
-						}
-					}
-				}
-			}
 		},
 		-- import your plugins
 		{ import = "config.plugins" },
