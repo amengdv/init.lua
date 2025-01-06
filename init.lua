@@ -1,5 +1,17 @@
 require("config.lazy")
 
+-- Blade Tree Sitter
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+---@diagnostic disable-next-line: inject-field
+parser_config.blade = {
+	install_info = {
+		url = "https://github.com/EmranMR/tree-sitter-blade.git", -- local path or git repo
+		files = { "src/parser.c" },                             -- note that some parsers also require src/scanner.c or src/scanner.cc
+		branch = "main",
+	},
+	filetype = "blade", -- if filetype does not match the parser name
+}
+
 vim.api.nvim_create_autocmd('TextYankPost', {
 	desc = 'Highlight after yank',
 	group = vim.api.nvim_create_augroup('amengdv-highlight-yank', { clear = true }),
@@ -56,4 +68,4 @@ function ColorMyPencils(color, transparent)
 	end
 end
 
-ColorMyPencils('rose-pine')
+ColorMyPencils('gruvbox', false)

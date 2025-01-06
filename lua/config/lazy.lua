@@ -30,7 +30,20 @@ require "config.remap"
 require("lazy").setup({
 	spec = {
 		{
-			{ "rose-pine/neovim", name = "rose-pine" },
+			{ "rose-pine/neovim",         name = "rose-pine" },
+			{
+				'm15a/nvim-srcerite',
+				dependencies = {
+					'Iron-E/nvim-highlite'
+				}
+			},
+			{
+				"folke/tokyonight.nvim",
+				lazy = false,
+				priority = 1000,
+				opts = {},
+			},
+			{ "ellisonleao/gruvbox.nvim", priority = 1000,   config = true }
 		},
 		-- import your plugins
 		{ import = "config.plugins" },

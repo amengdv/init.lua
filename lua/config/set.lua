@@ -5,10 +5,10 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 
 vim.opt.hlsearch = false
-vim.opt.incsearch = true
 
+vim.opt.incsearch = true
 vim.opt.swapfile = false
-vim.opt.colorcolumn = "90"
+--vim.opt.colorcolumn = "90"
 vim.opt.updatetime = 50
 vim.opt.undofile = true
 vim.opt.guicursor = ""

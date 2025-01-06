@@ -20,7 +20,7 @@ return {
 		config = function()
 			require("mason").setup {}
 			require("mason-lspconfig").setup {
-				ensure_installed = { "lua_ls", "ts_ls", "gopls", "html", "emmet_language_server", "phpactor" }
+				ensure_installed = { "lua_ls", "ts_ls", "gopls", "html", "emmet_language_server" }
 			}
 
 			local capabilities = require('blink.cmp').get_lsp_capabilities()
@@ -28,6 +28,34 @@ return {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup { capabilities = capabilities }
 				end,
+
+				['html'] = function()
+					require("lspconfig")['html'].setup {
+						capabilities = capabilities,
+						filetypes = {
+							'blade'
+						}
+					}
+				end,
+
+				emmet_language_server = function()
+					require("lspconfig")['emmet_language_server'].setup {
+						capabilities = capabilities,
+						filetypes = {
+							'blade'
+						}
+					}
+				end,
+
+				stimulus_ls = function()
+					require("lspconfig")['stimulus_ls'].setup {
+						capabilities = capabilities,
+						filetypes = {
+							'blade'
+						}
+					}
+				end
+
 			}
 		end
 	}
